@@ -32,9 +32,18 @@
     </section>
 
     <script>
-        let id = "id";
-        let pw = "pw";
-        let btn = "btn";
+        let id = document.getElementById('id');
+        let pw = document.getElementById('pw');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            if (id.value == "") {
+                // this next part is getting access to the label that is next to the id
+                id.nextElementSibling.classList.add("warning");
+            } else if (pw.value == "") {
+                pw.nextElementSibling.classList.add("warning");
+            }
+        })
 
     </script>
 </body>
